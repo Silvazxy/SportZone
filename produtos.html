@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportZone | Coleção Completa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleP.css">
+</head>
+<body>
+
+    <!--------------TOPO------------------>
+    <header class="top glass-header scrolled" id="header"> <!-- Scrolled por padrão pois não tem banner hero -->
+        <div class="topo">
+            <div class="logo"><img id="logo" src="Imagem - 3 Páginas/LOGO.png" alt="SportZone Logo"></div>
+            <div class="inputlupa">
+                <input id="input" type="text" placeholder="Busque equipamentos, marcas...">
+            </div>
+            <div class="icones">
+                <div class="user-icon-wrapper"><img id="usuario" src="Imagem - 3 Páginas/IconeUsuario.png" alt="Usuário"></div>
+                <div class="cart-icon-wrapper" onclick="abrirCarrinho()">
+                    <img id="carro" src="Imagem - 3 Páginas/IconeCarrodeCompra.png" alt="Carrinho">
+                    <span class="cart-badge">0</span>
+                </div>
+            </div>
+        </div>
+        <nav class="conexoes">
+            <a href="index.html">HOME</a>
+            <a href="produtos.html" class="ativo">PRODUTOS</a>
+            <a href="sobrenos.html">SOBRE NÓS</a>
+        </nav>
+    </header>
+
+    <main class="container-principal" style="margin-top: 150px;">
+        
+        <div class="cabecalho-produtos reveal active">
+            <div class="header-secao" style="margin-bottom: 30px;">
+                <h2 class="titulo-secao">TODA A <span>COLEÇÃO</span></h2>
+                <div class="linha-destaque"></div>
+            </div>
+            
+            <!-- Filtros Modernos (Pills) -->
+            <div class="filtros-modernos">
+                <button class="filter-pill active" onclick="filtrar('todos')">Todos</button>
+                <button class="filter-pill" onclick="filtrar('futebol')">Futebol</button>
+                <button class="filter-pill" onclick="filtrar('basquete')">Basquete</button>
+                <button class="filter-pill" onclick="filtrar('treino')">Treino & Gym</button>
+                <button class="filter-pill" onclick="filtrar('acessorios')">Acessórios</button>
+            </div>
+        </div>
+
+        <!--------------GRID DE PRODUTOS------------------>
+        <div class="grid-produtos" id="grid">
+
+            <!-- Produto 1 (Treino) -->
+            <div class="card-produto filter-item treino">
+                <div class="img-container">
+                    <span class="badge-desconto">-20%</span>
+                    <img src="Imagem - Produtos/Camiseta nike 1.jpg" alt="Camiseta Dri-Fit">
+                    <div class="hover-actions"><button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar</button></div>
+                </div>
+                <div class="info-produto">
+                    <p class="marca">NIKE</p>
+                    <h3 class="nome-produto">Camiseta Dri-Fit</h3>
+                    <p class="preco">R$ 119,90</p>
+                </div>
+            </div>
+
+            <!-- Produto 2 (Treino) -->
+            <div class="card-produto filter-item treino">
+                <div class="img-container">
+                    <span class="badge-desconto">-15%</span>
+                    <img src="Imagem - Produtos/Shorts Adidas.jpg" alt="Shorts Adidas">
+                    <div class="hover-actions"><button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar</button></div>
+                </div>
+                <div class="info-produto">
+                    <p class="marca">ADIDAS</p>
+                    <h3 class="nome-produto">Shorts Performance</h3>
+                    <p class="preco">R$ 99,90</p>
+                </div>
+            </div>
+
+            <!-- Produto 3 (Treino) -->
+            <div class="card-produto filter-item treino">
+                <div class="img-container">
+                    <span class="badge-desconto">-25%</span>
+                    <img src="Imagem - Produtos/Tenis Nike.jpg" alt="Tênis Nike">
+                    <div class="hover-actions"><button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar</button></div>
+                </div>
+                <div class="info-produto">
+                    <p class="marca">NIKE</p>
+                    <h3 class="nome-produto">Tênis Revolution</h3>
+                    <p class="preco">R$ 299,99</p>
+                </div>
+            </div>
+
+            <!-- Produto 4 (Treino) -->
+            <div class="card-produto filter-item treino">
+                <div class="img-container">
+                    <span class="badge-desconto">-30%</span>
+                    <img src="Imagem - Produtos/Tenis Adidas.jpg" alt="Tênis Adidas">
+                    <div class="hover-actions"><button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar</button></div>
+                </div>
+                <div class="info-produto">
+                    <p class="marca">ADIDAS</p>
+                    <h3 class="nome-produto">Tênis Run 2.0</h3>
+                    <p class="preco">R$ 279,90</p>
+                </div>
+            </div>
+
+            <!-- Produto 5 (Treino) -->
+            <div class="card-produto filter-item treino">
+                <div class="img-container">
+                    <span class="badge-desconto">-20%</span>
+                    <img src="Imagem - Produtos/Agasalho Puma.jpg" alt="Blusa Puma">
+                    <div class="hover-actions"><button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar</button></div>
+                </div>
+                <div class="info-produto">
+                    <p class="marca">PUMA</p>
+                    <h3 class="nome-produto">Blusa Classic Moletom</h3>
+                    <p class="preco">R$ 439,90</p>
+                </div>
+            </div>
+
+            <!-- Produto 6 (Treino) -->
+            <div class="card-produto filter-item treino">
+                <div class="img-container">
+                    <span class="badge-desconto">-10%</span>
+                    <img src="Imagem - Produtos/Meia de Comprensão Puma.jpg" alt="Meia Compressão">
+                    <div class="hover-actions"><button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar</button></div>
+                </div>
+                <div class="info-produto">
+                    <p class="marca">PUMA</p>
+                    <h3 class="nome-produto">Meia de Compressão</h3>
+                    <p class="preco">R$ 89,90</p>
+                </div>
+            </div>
+
+            <!-- Produto 7 (Futebol) -->
+            <div class="card-produto filter-item futebol">
+                <div class="img-container">
+                    <span class="badge-desconto">-20%</span>
+                    <img src="Imagem - Produtos/Bola de Futebol.jpg" alt="Bola de Futebol">
+                    <div class="hover-actions"><button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar</button></div>
+                </div>
+                <div class="info-produto">
+                    <p class="marca">GENERIC</p>
+                    <h3 class="nome-produto">Bola de Futebol Oficial</h3>
+                    <p class="preco">R$ 199,99</p>
+                </div>
+            </div>
+
+            <!-- Produto 8 (Basquete) -->
+            <div class="card-produto filter-item basquete">
+                <div class="img-container">
+                    <span class="badge-desconto">-25%</span>
+                    <img src="Imagem - Produtos/Bola de Basquete Wilson.jpg" alt="Bola Basquete Wilson">
+                    <div class="hover-actions"><button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar</button></div>
+                </div>
+                <div class="info-produto">
+                    <p class="marca">WILSON</p>
+                    <h3 class="nome-produto">Bola de Basquete Pro</h3>
+                    <p class="preco">R$ 499,99</p>
+                </div>
+            </div>
+
+            <!-- Produto 9 (Futebol) -->
+            <div class="card-produto filter-item futebol">
+                <div class="img-container">
+                    <span class="badge-desconto">-20%</span>
+                    <img src="Imagem - Produtos/Luva de Goleiro Puma.jpg" alt="Luva Goleiro">
+                    <div class="hover-actions"><button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar</button></div>
+                </div>
+                <div class="info-produto">
+                    <p class="marca">PUMA</p>
+                    <h3 class="nome-produto">Luva de Goleiro Ultra</h3>
+                    <p class="preco">R$ 249,90</p>
+                </div>
+            </div>
+
+            <!-- Produto 10 (Futebol) -->
+            <div class="card-produto filter-item futebol">
+                <div class="img-container">
+                    <span class="badge-desconto">-10%</span>
+                    <img src="Imagem - Produtos/Caneleira Nike.jpg" alt="Caneleira">
+                    <div class="hover-actions"><button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar</button></div>
+                </div>
+                <div class="info-produto">
+                    <p class="marca">NIKE</p>
+                    <h3 class="nome-produto">Caneleira Charge</h3>
+                    <p class="preco">R$ 89,90</p>
+                </div>
+            </div>
+
+            <!-- Produto 11 (Acessórios) -->
+            <div class="card-produto filter-item acessorios">
+                <div class="img-container">
+                    <span class="badge-desconto">-15%</span>
+                    <img src="Imagem - Produtos/Bolsa Esportiva Adidas.jpg" alt="Bolsa Esportiva">
+                    <div class="hover-actions"><button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar</button></div>
+                </div>
+                <div class="info-produto">
+                    <p class="marca">ADIDAS</p>
+                    <h3 class="nome-produto">Mochila Duffel</h3>
+                    <p class="preco">R$ 199,90</p>
+                </div>
+            </div>
+
+            <!-- Produto 12 (Acessórios) -->
+            <div class="card-produto filter-item acessorios">
+                <div class="img-container">
+                    <span class="badge-desconto">-15%</span>
+                    <img src="Imagem - Produtos/Garrafa Térmica.jpg" alt="Garrafa Térmica">
+                    <div class="hover-actions"><button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar</button></div>
+                </div>
+                <div class="info-produto">
+                    <p class="marca">GENERIC</p>
+                    <h3 class="nome-produto">Garrafa Térmica Inox</h3>
+                    <p class="preco">R$ 89,90</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!--------------RODAPÉ------------------>
+    <footer>
+        <div class="rodape-container">
+            <div class="rodape-col">
+                <p class="rodape-titulo">Sobre nós</p>
+                <p class="rodape-texto">Nossa paixão é <br> o esporte.</p>
+            </div>
+            <div class="rodape-col">
+                <p class="rodape-titulo">Suporte</p>
+                <p class="rodape-texto">Ajuda e <br> rastreamento.</p>
+            </div>
+            <div class="rodape-col">
+                <p class="rodape-titulo">Contato</p>
+                <p class="rodape-email">contato@sportz<br>one.com</p>
+            </div>
+            <div class="rodape-col">
+                <p class="rodape-titulo">Devoluções</p>
+                <p class="rodape-texto">Troca fácil em 7 <br> dias.</p>
+            </div>
+        </div>
+        <div class="rodape-redes">
+            <div class="redes-icones">
+                <a href="#"><img src="Imagem - 3 Páginas/IconeWhatsApp.png" alt="WhatsApp"></a>
+                <a href="#"><img src="Imagem - 3 Páginas/IconeInstagram.png" alt="Instagram"></a>
+                <a href="#"><img src="Imagem - 3 Páginas/IconeTikTok.png" alt="TikTok"></a>
+            </div>
+            <p id="direitos">@2025 SportZone - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+
+    <div id="modal-carrinho" class="modal-carrinho" onclick="fecharCarrinhoFora(event)">
+        <div class="conteudo-carrinho">
+            <div class="cabecalho-carrinho">
+                <h2>MEU <span>CARRINHO</span></h2>
+                <button class="fechar-carrinho" onclick="fecharCarrinho()" aria-label="Fechar carrinho">&times;</button>
+            </div>
+            <div id="lista-carrinho" class="lista-carrinho"></div>
+            <div class="rodape-carrinho">
+                <div class="total-carrinho"><span>Total</span><strong id="total-carrinho">R$ 0,00</strong></div>
+                <button class="limpar-carrinho" onclick="limparCarrinho()">Limpar carrinho</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast"></div>
+
+    
+<script>
+    // Animação dos produtos ao carregar a página
+    document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll('.card-produto');
+
+        cards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+
+            setTimeout(() => {
+                card.style.transition = 'all 0.6s cubic-bezier(0.5, 0, 0, 1)';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 100);
+        });
+    });
+
+    // LÓGICA DE FILTRO DOS PRODUTOS
+    function filtrar(categoria) {
+        const pills = document.querySelectorAll('.filter-pill');
+
+        pills.forEach(p => p.classList.remove('active'));
+
+        event.target.classList.add('active');
+
+        const itens = document.querySelectorAll('.filter-item');
+
+        itens.forEach(item => {
+            if (categoria === 'todos' || item.classList.contains(categoria)) {
+                item.style.display = 'block';
+
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, 50);
+
+            } else {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.9)';
+
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 300);
+            }
+        });
+    }
+
+    // Efeito do menu ao rolar a página
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('header');
+
+        if (header) {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+    });
+
+    // Animação dos elementos ao rolar a página
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+        for (let i = 0; i < reveals.length; i++) {
+            let alturaJanela = window.innerHeight;
+            let posicaoElemento = reveals[i].getBoundingClientRect().top;
+
+            if (posicaoElemento < alturaJanela - 100) {
+                reveals[i].classList.add('active');
+            }
+        }
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+
+    // CARRINHO COMPARTILHADO ENTRE AS PÁGINAS
+    let itensCarrinho = JSON.parse(localStorage.getItem('itensCarrinho')) || [];
+
+    function salvarCarrinho() {
+        localStorage.setItem('itensCarrinho', JSON.stringify(itensCarrinho));
+        localStorage.setItem('quantidadeCarrinho', itensCarrinho.reduce((total, item) => total + item.quantidade, 0));
+        atualizarContadorCarrinho();
+    }
+
+    function atualizarContadorCarrinho() {
+        const quantidade = itensCarrinho.reduce((total, item) => total + item.quantidade, 0);
+        document.querySelectorAll('.cart-badge').forEach(badge => badge.innerText = quantidade);
+    }
+
+    function adicionarAoCarrinho(botao) {
+        const cartao = botao.closest('.card-produto');
+        if (!cartao) return;
+        const nome = cartao.querySelector('.nome-produto')?.innerText.trim() || 'Produto';
+        const marca = cartao.querySelector('.marca')?.innerText.trim() || '';
+        const precoTexto = cartao.querySelector('.preco:not(.preco-antigo)')?.innerText || 'R$ 0,00';
+        const preco = Number(precoTexto.replace('R$', '').replace(/\./g, '').replace(',', '.').trim()) || 0;
+        const imagem = cartao.querySelector('.img-container img')?.getAttribute('src') || '';
+        const existente = itensCarrinho.find(item => item.nome === nome);
+        if (existente) existente.quantidade++;
+        else itensCarrinho.push({ nome, marca, preco, imagem, quantidade: 1 });
+        salvarCarrinho();
+        mostrarToast(nome + ' adicionado ao carrinho!');
+    }
+
+    function abrirCarrinho() {
+        const modal = document.getElementById('modal-carrinho');
+        if (!modal) return;
+        renderizarCarrinho();
+        modal.classList.add('aberto');
+        document.body.classList.add('carrinho-aberto');
+    }
+
+    function fecharCarrinho() {
+        document.getElementById('modal-carrinho')?.classList.remove('aberto');
+        document.body.classList.remove('carrinho-aberto');
+    }
+
+    function fecharCarrinhoFora(evento) {
+        if (evento.target.id === 'modal-carrinho') fecharCarrinho();
+    }
+
+    function renderizarCarrinho() {
+        const lista = document.getElementById('lista-carrinho');
+        const totalElemento = document.getElementById('total-carrinho');
+        if (!lista || !totalElemento) return;
+        if (itensCarrinho.length === 0) {
+            lista.innerHTML = '<p class="carrinho-vazio">Seu carrinho está vazio.</p>';
+            totalElemento.innerText = 'R$ 0,00';
+            return;
+        }
+        lista.innerHTML = itensCarrinho.map((item, indice) => `
+            <div class="item-carrinho">
+                <img src="${item.imagem}" alt="${item.nome}">
+                <div class="dados-item-carrinho">
+                    <strong>${item.nome}</strong><small>${item.marca}</small>
+                    <span>${item.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
+                    <div class="controle-quantidade">
+                        <button onclick="alterarQuantidade(${indice}, -1)">−</button>
+                        <span>${item.quantidade}</span>
+                        <button onclick="alterarQuantidade(${indice}, 1)">+</button>
+                        <button class="remover-item" onclick="removerItem(${indice})">Remover</button>
+                    </div>
+                </div>
+            </div>`).join('');
+        const total = itensCarrinho.reduce((soma, item) => soma + item.preco * item.quantidade, 0);
+        totalElemento.innerText = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    function alterarQuantidade(indice, variacao) {
+        if (!itensCarrinho[indice]) return;
+        itensCarrinho[indice].quantidade += variacao;
+        if (itensCarrinho[indice].quantidade <= 0) itensCarrinho.splice(indice, 1);
+        salvarCarrinho();
+        renderizarCarrinho();
+    }
+
+    function removerItem(indice) {
+        itensCarrinho.splice(indice, 1);
+        salvarCarrinho();
+        renderizarCarrinho();
+    }
+
+    function limparCarrinho() {
+        itensCarrinho = [];
+        salvarCarrinho();
+        renderizarCarrinho();
+    }
+
+    function mostrarToast(mensagem) {
+        const toast = document.getElementById('toast');
+        if (!toast) return;
+        toast.innerText = mensagem;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    salvarCarrinho();
+</script>
+
+</body>
+</html>

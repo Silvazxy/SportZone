@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportZone | Premium Sports</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!--------------TOPO (GLASSMORPHISM)------------------>
+    <header class="top glass-header" id="header">
+        <div class="topo">
+            <div class="logo">
+                <img id="logo" src="Imagem - 3 Páginas/LOGO.png" alt="SportZone Logo">
+            </div>
+
+            <div class="inputlupa">
+                <input id="input" type="text" placeholder="Busque equipamentos, marcas...">
+            </div>
+
+            <div class="icones">
+                <div class="user-icon-wrapper">
+                    <img id="usuario" src="Imagem - 3 Páginas/IconeUsuario.png" alt="Usuário">
+                </div>
+                <div class="cart-icon-wrapper" onclick="abrirCarrinho()">
+                    <img id="carro" src="Imagem - 3 Páginas/IconeCarrodeCompra.png" alt="Carrinho">
+                    <span class="cart-badge">0</span>
+                </div>
+            </div>
+        </div>
+
+        <nav class="conexoes">
+            <a href="index.html" class="ativo">HOME</a>
+            <a href="produtos.html">PRODUTOS</a>
+            <a href="sobrenos.html">SOBRE NÓS</a>
+        </nav>
+    </header>
+
+    <!--------------HERO BANNER------------------>
+    <section id="banner" class="reveal">
+        <div class="banner-overlay"></div>
+        <img src="Imagem - Home/Banner - HOME.jpg" alt="Banner SportZone" class="banner-img">
+        <div class="banner-content">
+            <h1 class="glitch-text">ELEVE SEU JOGO</h1>
+            <p>Equipamentos de alta performance para quem não aceita menos que o topo.</p>
+            <a href="produtos.html" class="btn-premium">EXPLORAR COLEÇÃO</a>
+        </div>
+    </section>
+
+    <main class="container-principal">
+
+        <!--------------CATEGORIAS------------------>
+        <section id="categoria" class="secao reveal">
+            <div class="header-secao">
+                <h2 class="titulo-secao">EXPLORE POR <span>CATEGORIA</span></h2>
+                <div class="linha-destaque"></div>
+            </div>
+
+            <div class="grid-categorias">
+                <div class="card-categoria">
+                    <img src="Imagem - Home/Futebol - HOME.jpg" alt="Futebol">
+                    <div class="categoria-overlay"><h3>FUTEBOL</h3></div>
+                </div>
+
+                <div class="card-categoria">
+                    <img src="Imagem - Home/Basquete - HOME.webp" alt="Basquete">
+                    <div class="categoria-overlay"><h3>BASQUETE</h3></div>
+                </div>
+
+                <div class="card-categoria">
+                    <img src="Imagem - Home/Volei - HOME.jfif" alt="Vôlei">
+                    <div class="categoria-overlay"><h3>VÔLEI</h3></div>
+                </div>
+
+                <div class="card-categoria">
+                    <img src="Imagem - Home/PingPong - HOME.jpg" alt="Ping Pong">
+                    <div class="categoria-overlay"><h3>TÊNIS DE MESA</h3></div>
+                </div>
+            </div>
+        </section>
+
+        <!--------------DESTAQUES------------------>
+        <section id="destaques" class="secao reveal">
+            <div class="header-secao">
+                <h2 class="titulo-secao">LANÇAMENTOS <span>DESTAQUE</span></h2>
+                <div class="linha-destaque"></div>
+            </div>
+
+            <div class="grid-produtos">
+
+                <div class="card-produto">
+                    <div class="img-container">
+                        <img src="Imagem - Home/Chuteira - HOME.jpg" alt="Chuteira">
+                        <div class="hover-actions">
+                            <button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    <div class="info-produto">
+                        <p class="marca">NIKE</p>
+                        <h3 class="nome-produto">Mercurial Vapor 15</h3>
+                        <p class="preco">R$ 299,00</p>
+                    </div>
+                </div>
+
+                <div class="card-produto">
+                    <div class="img-container">
+                        <img src="Imagem - Home/Bola basquete - HOME.jpg" alt="Bola Basquete">
+                        <div class="hover-actions">
+                            <button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    <div class="info-produto">
+                        <p class="marca">SPALDING</p>
+                        <h3 class="nome-produto">Streetball Oficial</h3>
+                        <p class="preco">R$ 119,99</p>
+                    </div>
+                </div>
+
+                <div class="card-produto">
+                    <div class="img-container">
+                        <img src="Imagem - Home/TênisBasquetePreto - HOME.jpg" alt="Tênis Basquete">
+                        <div class="hover-actions">
+                            <button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    <div class="info-produto">
+                        <p class="marca">JORDAN</p>
+                        <h3 class="nome-produto">Stay Loyal 2</h3>
+                        <p class="preco">R$ 830,00</p>
+                    </div>
+                </div>
+
+                <div class="card-produto">
+                    <div class="img-container">
+                        <img src="Imagem - Home/Bolsa esportiva - HOME.jpg" alt="Bolsa Esportiva">
+                        <div class="hover-actions">
+                            <button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    <div class="info-produto">
+                        <p class="marca">NIKE</p>
+                        <h3 class="nome-produto">Brasilia 9.5</h3>
+                        <p class="preco">R$ 322,99</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!--------------PROMOÇÕES------------------>
+        <section id="promocoes" class="secao reveal">
+            <div class="header-secao">
+                <h2 class="titulo-secao">OFERTAS <span>IMPERDÍVEIS</span></h2>
+                <div class="linha-destaque"></div>
+            </div>
+
+            <div class="grid-produtos">
+
+                <div class="card-produto promo-card">
+                    <div class="img-container">
+                        <span class="badge-desconto">-25%</span>
+                        <img src="Imagem - Home/Camiseta oficial de futebol - HOME.jpg" alt="Camisa Seleção">
+                        <div class="hover-actions">
+                            <button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    <div class="info-produto promo-info">
+                        <p class="marca">NIKE</p>
+                        <h3 class="nome-produto">Camisa Seleção Brasileira</h3>
+                        <div class="box-preco">
+                            <p class="preco-antigo">R$ 399,00</p>
+                            <p class="preco">R$ 299,90</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-produto promo-card">
+                    <div class="img-container">
+                        <span class="badge-desconto">-25%</span>
+                        <img src="Imagem - Home/Raquete de tenis - HOME.jpg" alt="Raquete">
+                        <div class="hover-actions">
+                            <button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    <div class="info-produto promo-info">
+                        <p class="marca">WPS</p>
+                        <h3 class="nome-produto">Raquete de Tênis Pro</h3>
+                        <div class="box-preco">
+                            <p class="preco-antigo">R$ 799,90</p>
+                            <p class="preco">R$ 599,90</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-produto promo-card">
+                    <div class="img-container">
+                        <span class="badge-desconto">-30%</span>
+                        <img src="Imagem - Home/Garrafa Térmica - HOME.jpg" alt="Garrafa Térmica">
+                        <div class="hover-actions">
+                            <button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    <div class="info-produto promo-info">
+                        <p class="marca">NIKE</p>
+                        <h3 class="nome-produto">Garrafa Térmica Inox</h3>
+                        <div class="box-preco">
+                            <p class="preco-antigo">R$ 115,90</p>
+                            <p class="preco">R$ 80,90</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-produto promo-card">
+                    <div class="img-container">
+                        <span class="badge-desconto">-15%</span>
+                        <img src="Imagem - Home/Meiao preto e branco - HOME.jpg" alt="Meião">
+                        <div class="hover-actions">
+                            <button class="btn-add-cart" onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    <div class="info-produto promo-info">
+                        <p class="marca">ZN CLASSIC</p>
+                        <h3 class="nome-produto">Meião Profissional</h3>
+                        <div class="box-preco">
+                            <p class="preco-antigo">R$ 79,90</p>
+                            <p class="preco">R$ 67,90</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!--------------RODAPÉ------------------>
+    <footer class="reveal">
+        <div class="rodape-container">
+            <div class="rodape-col">
+                <p class="rodape-titulo">Sobre nós</p>
+                <p class="rodape-texto">Nossa paixão é <br> o esporte.</p>
+            </div>
+
+            <div class="rodape-col">
+                <p class="rodape-titulo">Suporte</p>
+                <p class="rodape-texto">Ajuda e <br> rastreamento.</p>
+            </div>
+
+            <div class="rodape-col">
+                <p class="rodape-titulo">Contato</p>
+                <p class="rodape-email">contato@sportz<br>one.com</p>
+            </div>
+
+            <div class="rodape-col">
+                <p class="rodape-titulo">Devoluções</p>
+                <p class="rodape-texto">Troca fácil em 7 <br> dias.</p>
+            </div>
+        </div>
+
+        <div class="rodape-redes">
+            <div class="redes-icones">
+                <a href="#"><img src="Imagem - 3 Páginas/IconeWhatsApp.png" alt="WhatsApp"></a>
+                <a href="#"><img src="Imagem - 3 Páginas/IconeInstagram.png" alt="Instagram"></a>
+                <a href="#"><img src="Imagem - 3 Páginas/IconeTikTok.png" alt="TikTok"></a>
+            </div>
+            <p id="direitos">@2025 SportZone - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+
+    <div id="modal-carrinho" class="modal-carrinho" onclick="fecharCarrinhoFora(event)">
+        <div class="conteudo-carrinho">
+            <div class="cabecalho-carrinho">
+                <h2>MEU <span>CARRINHO</span></h2>
+                <button class="fechar-carrinho" onclick="fecharCarrinho()" aria-label="Fechar carrinho">&times;</button>
+            </div>
+            <div id="lista-carrinho" class="lista-carrinho"></div>
+            <div class="rodape-carrinho">
+                <div class="total-carrinho"><span>Total</span><strong id="total-carrinho">R$ 0,00</strong></div>
+                <button class="limpar-carrinho" onclick="limparCarrinho()">Limpar carrinho</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast"></div>
+
+    <!-- SCRIPT DE ANIMAÇÃO E INTERATIVIDADE -->
+    
+<script>
+    // Efeito do menu ao rolar a página
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('header');
+
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Animação dos elementos ao rolar a página
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+        for (let i = 0; i < reveals.length; i++) {
+            let alturaJanela = window.innerHeight;
+            let posicaoElemento = reveals[i].getBoundingClientRect().top;
+            let elementoVisivel = 100;
+
+            if (posicaoElemento < alturaJanela - elementoVisivel) {
+                reveals[i].classList.add('active');
+            }
+        }
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+
+    // CARRINHO COMPARTILHADO ENTRE AS PÁGINAS
+    let itensCarrinho = JSON.parse(localStorage.getItem('itensCarrinho')) || [];
+
+    function salvarCarrinho() {
+        localStorage.setItem('itensCarrinho', JSON.stringify(itensCarrinho));
+        localStorage.setItem('quantidadeCarrinho', itensCarrinho.reduce((total, item) => total + item.quantidade, 0));
+        atualizarContadorCarrinho();
+    }
+
+    function atualizarContadorCarrinho() {
+        const quantidade = itensCarrinho.reduce((total, item) => total + item.quantidade, 0);
+        document.querySelectorAll('.cart-badge').forEach(badge => badge.innerText = quantidade);
+    }
+
+    function adicionarAoCarrinho(botao) {
+        const cartao = botao.closest('.card-produto');
+        if (!cartao) return;
+        const nome = cartao.querySelector('.nome-produto')?.innerText.trim() || 'Produto';
+        const marca = cartao.querySelector('.marca')?.innerText.trim() || '';
+        const precoTexto = cartao.querySelector('.preco:not(.preco-antigo)')?.innerText || 'R$ 0,00';
+        const preco = Number(precoTexto.replace('R$', '').replace(/\./g, '').replace(',', '.').trim()) || 0;
+        const imagem = cartao.querySelector('.img-container img')?.getAttribute('src') || '';
+        const existente = itensCarrinho.find(item => item.nome === nome);
+        if (existente) existente.quantidade++;
+        else itensCarrinho.push({ nome, marca, preco, imagem, quantidade: 1 });
+        salvarCarrinho();
+        mostrarToast(nome + ' adicionado ao carrinho!');
+    }
+
+    function abrirCarrinho() {
+        const modal = document.getElementById('modal-carrinho');
+        if (!modal) return;
+        renderizarCarrinho();
+        modal.classList.add('aberto');
+        document.body.classList.add('carrinho-aberto');
+    }
+
+    function fecharCarrinho() {
+        document.getElementById('modal-carrinho')?.classList.remove('aberto');
+        document.body.classList.remove('carrinho-aberto');
+    }
+
+    function fecharCarrinhoFora(evento) {
+        if (evento.target.id === 'modal-carrinho') fecharCarrinho();
+    }
+
+    function renderizarCarrinho() {
+        const lista = document.getElementById('lista-carrinho');
+        const totalElemento = document.getElementById('total-carrinho');
+        if (!lista || !totalElemento) return;
+        if (itensCarrinho.length === 0) {
+            lista.innerHTML = '<p class="carrinho-vazio">Seu carrinho está vazio.</p>';
+            totalElemento.innerText = 'R$ 0,00';
+            return;
+        }
+        lista.innerHTML = itensCarrinho.map((item, indice) => `
+            <div class="item-carrinho">
+                <img src="${item.imagem}" alt="${item.nome}">
+                <div class="dados-item-carrinho">
+                    <strong>${item.nome}</strong><small>${item.marca}</small>
+                    <span>${item.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
+                    <div class="controle-quantidade">
+                        <button onclick="alterarQuantidade(${indice}, -1)">−</button>
+                        <span>${item.quantidade}</span>
+                        <button onclick="alterarQuantidade(${indice}, 1)">+</button>
+                        <button class="remover-item" onclick="removerItem(${indice})">Remover</button>
+                    </div>
+                </div>
+            </div>`).join('');
+        const total = itensCarrinho.reduce((soma, item) => soma + item.preco * item.quantidade, 0);
+        totalElemento.innerText = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    function alterarQuantidade(indice, variacao) {
+        if (!itensCarrinho[indice]) return;
+        itensCarrinho[indice].quantidade += variacao;
+        if (itensCarrinho[indice].quantidade <= 0) itensCarrinho.splice(indice, 1);
+        salvarCarrinho();
+        renderizarCarrinho();
+    }
+
+    function removerItem(indice) {
+        itensCarrinho.splice(indice, 1);
+        salvarCarrinho();
+        renderizarCarrinho();
+    }
+
+    function limparCarrinho() {
+        itensCarrinho = [];
+        salvarCarrinho();
+        renderizarCarrinho();
+    }
+
+    function mostrarToast(mensagem) {
+        const toast = document.getElementById('toast');
+        if (!toast) return;
+        toast.innerText = mensagem;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    salvarCarrinho();
+</script>
+
+</body>
+</html>

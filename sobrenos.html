@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportZone | Nossa História</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleS.css">
+</head>
+<body>
+
+    <!--------------TOPO------------------>
+    <header class="top glass-header scrolled" id="header">
+        <div class="topo">
+            <div class="logo"><img id="logo" src="Imagem - 3 Páginas/LOGO.png" alt="SportZone Logo"></div>
+            <div class="inputlupa">
+                <input id="input" type="text" placeholder="Busque equipamentos, marcas...">
+            </div>
+            <div class="icones">
+                <div class="user-icon-wrapper"><img id="usuario" src="Imagem - 3 Páginas/IconeUsuario.png" alt="Usuário"></div>
+                <div class="cart-icon-wrapper" onclick="abrirCarrinho()">
+                    <img id="carro" src="Imagem - 3 Páginas/IconeCarrodeCompra.png" alt="Carrinho">
+                    <span class="cart-badge">0</span>
+                </div>
+            </div>
+        </div>
+        <nav class="conexoes">
+            <a href="index.html">HOME</a>
+            <a href="produtos.html">PRODUTOS</a>
+            <a href="sobrenos.html" class="ativo">SOBRE NÓS</a>
+        </nav>
+    </header>
+
+    <main class="contprincipal" style="margin-top: 150px;">
+
+        <section class="esquerda reveal active">
+            <h1 class="titulo-pagina">A ESSÊNCIA <span>SPORTZONE</span></h1>
+            <div class="linha-destaque" style="margin: 15px 0 30px 0;"></div>
+            
+            <p>
+                A SportZone nasceu com um propósito claro: transformar vidas através do esporte. Acreditamos que movimento é saúde, energia, superação e conexão. Mais do que treinar, queremos inspirar pessoas a descobrirem o melhor de si mesmas, criando hábitos saudáveis e duradouros em um ambiente acolhedor, profissional e motivador.
+            </p>
+            <p>
+                Nosso time é formado por especialistas apaixonados por esporte e bem-estar. Oferecemos uma estrutura completa para atender desde quem está começando até atletas que buscam performance. Aqui, cada pessoa é única, e por isso oferecemos acompanhamento próximo e personalizado, respeitando o ritmo e os objetivos de cada um.
+            </p>
+            <p>
+                Na SportZone, o progresso é celebrado a cada etapa, e a jornada é tão importante quanto a meta final. Trabalhamos para criar uma comunidade ativa, onde todos se sintam motivados a crescer, se desafiar e, acima de tudo, se sentir bem.
+            </p>
+            <p>
+                Nossa missão é proporcionar uma experiência única e transformadora, criando um ambiente onde cada pessoa possa evoluir no seu próprio ritmo, se desafiar e, acima de tudo, se sentir bem.
+            </p>
+            <p class="destaque-texto">
+                Junte-se à SportZone e descubra uma nova forma de viver o esporte, mais completa, mais leve e com mais propósito.
+            </p>
+        </section>
+
+        <aside class="direita reveal active">
+            <div class="img-wrapper">
+                <img src="Imagem - SobreNós/Equipe ZN - SOBRE NÓS.jpg" alt="Equipe SportZone" id="eqzn">
+            </div>
+
+            <div class="forms">
+                <h3>FALE CONOSCO</h3>
+                <input type="text" placeholder="Seu Nome" required>
+                <input type="email" placeholder="Seu Email" required>
+                <input type="tel" placeholder="Seu Telefone">
+                <input type="text" placeholder="Assunto" required>
+                <textarea placeholder="Como podemos ajudar?" rows="4" required></textarea>
+                <button onclick="enviarFormulario(event)">ENVIAR MENSAGEM</button>
+            </div>
+        </aside>
+        
+    </main>
+
+    <!--------------RODAPÉ------------------>
+    <footer>
+        <div class="rodape-container">
+            <div class="rodape-col">
+                <p class="rodape-titulo">Sobre nós</p>
+                <p class="rodape-texto">Nossa paixão é <br> o esporte.</p>
+            </div>
+            <div class="rodape-col">
+                <p class="rodape-titulo">Suporte</p>
+                <p class="rodape-texto">Ajuda e <br> rastreamento.</p>
+            </div>
+            <div class="rodape-col">
+                <p class="rodape-titulo">Contato</p>
+                <p class="rodape-email">contato@sportz<br>one.com</p>
+            </div>
+            <div class="rodape-col">
+                <p class="rodape-titulo">Devoluções</p>
+                <p class="rodape-texto">Troca fácil em 7 <br> dias.</p>
+            </div>
+        </div>
+        <div class="rodape-redes">
+            <div class="redes-icones">
+                <a href="#"><img src="Imagem - 3 Páginas/IconeWhatsApp.png" alt="WhatsApp"></a>
+                <a href="#"><img src="Imagem - 3 Páginas/IconeInstagram.png" alt="Instagram"></a>
+                <a href="#"><img src="Imagem - 3 Páginas/IconeTikTok.png" alt="TikTok"></a>
+            </div>
+            <p id="direitos">@2025 SportZone - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+
+    <div id="modal-carrinho" class="modal-carrinho" onclick="fecharCarrinhoFora(event)">
+        <div class="conteudo-carrinho">
+            <div class="cabecalho-carrinho">
+                <h2>MEU <span>CARRINHO</span></h2>
+                <button class="fechar-carrinho" onclick="fecharCarrinho()" aria-label="Fechar carrinho">&times;</button>
+            </div>
+            <div id="lista-carrinho" class="lista-carrinho"></div>
+            <div class="rodape-carrinho">
+                <div class="total-carrinho"><span>Total</span><strong id="total-carrinho">R$ 0,00</strong></div>
+                <button class="limpar-carrinho" onclick="limparCarrinho()">Limpar carrinho</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast"></div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (header) header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        const reveals = document.querySelectorAll('.reveal');
+        function revealOnScroll() {
+            reveals.forEach(elemento => {
+                if (elemento.getBoundingClientRect().top < window.innerHeight - 100) elemento.classList.add('active');
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+
+    // CARRINHO COMPARTILHADO ENTRE AS PÁGINAS
+    let itensCarrinho = JSON.parse(localStorage.getItem('itensCarrinho')) || [];
+
+    function salvarCarrinho() {
+        localStorage.setItem('itensCarrinho', JSON.stringify(itensCarrinho));
+        localStorage.setItem('quantidadeCarrinho', itensCarrinho.reduce((total, item) => total + item.quantidade, 0));
+        atualizarContadorCarrinho();
+    }
+
+    function atualizarContadorCarrinho() {
+        const quantidade = itensCarrinho.reduce((total, item) => total + item.quantidade, 0);
+        document.querySelectorAll('.cart-badge').forEach(badge => badge.innerText = quantidade);
+    }
+
+    function adicionarAoCarrinho(botao) {
+        const cartao = botao.closest('.card-produto');
+        if (!cartao) return;
+        const nome = cartao.querySelector('.nome-produto')?.innerText.trim() || 'Produto';
+        const marca = cartao.querySelector('.marca')?.innerText.trim() || '';
+        const precoTexto = cartao.querySelector('.preco:not(.preco-antigo)')?.innerText || 'R$ 0,00';
+        const preco = Number(precoTexto.replace('R$', '').replace(/\./g, '').replace(',', '.').trim()) || 0;
+        const imagem = cartao.querySelector('.img-container img')?.getAttribute('src') || '';
+        const existente = itensCarrinho.find(item => item.nome === nome);
+        if (existente) existente.quantidade++;
+        else itensCarrinho.push({ nome, marca, preco, imagem, quantidade: 1 });
+        salvarCarrinho();
+        mostrarToast(nome + ' adicionado ao carrinho!');
+    }
+
+    function abrirCarrinho() {
+        const modal = document.getElementById('modal-carrinho');
+        if (!modal) return;
+        renderizarCarrinho();
+        modal.classList.add('aberto');
+        document.body.classList.add('carrinho-aberto');
+    }
+
+    function fecharCarrinho() {
+        document.getElementById('modal-carrinho')?.classList.remove('aberto');
+        document.body.classList.remove('carrinho-aberto');
+    }
+
+    function fecharCarrinhoFora(evento) {
+        if (evento.target.id === 'modal-carrinho') fecharCarrinho();
+    }
+
+    function renderizarCarrinho() {
+        const lista = document.getElementById('lista-carrinho');
+        const totalElemento = document.getElementById('total-carrinho');
+        if (!lista || !totalElemento) return;
+        if (itensCarrinho.length === 0) {
+            lista.innerHTML = '<p class="carrinho-vazio">Seu carrinho está vazio.</p>';
+            totalElemento.innerText = 'R$ 0,00';
+            return;
+        }
+        lista.innerHTML = itensCarrinho.map((item, indice) => `
+            <div class="item-carrinho">
+                <img src="${item.imagem}" alt="${item.nome}">
+                <div class="dados-item-carrinho">
+                    <strong>${item.nome}</strong><small>${item.marca}</small>
+                    <span>${item.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
+                    <div class="controle-quantidade">
+                        <button onclick="alterarQuantidade(${indice}, -1)">−</button>
+                        <span>${item.quantidade}</span>
+                        <button onclick="alterarQuantidade(${indice}, 1)">+</button>
+                        <button class="remover-item" onclick="removerItem(${indice})">Remover</button>
+                    </div>
+                </div>
+            </div>`).join('');
+        const total = itensCarrinho.reduce((soma, item) => soma + item.preco * item.quantidade, 0);
+        totalElemento.innerText = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    function alterarQuantidade(indice, variacao) {
+        if (!itensCarrinho[indice]) return;
+        itensCarrinho[indice].quantidade += variacao;
+        if (itensCarrinho[indice].quantidade <= 0) itensCarrinho.splice(indice, 1);
+        salvarCarrinho();
+        renderizarCarrinho();
+    }
+
+    function removerItem(indice) {
+        itensCarrinho.splice(indice, 1);
+        salvarCarrinho();
+        renderizarCarrinho();
+    }
+
+    function limparCarrinho() {
+        itensCarrinho = [];
+        salvarCarrinho();
+        renderizarCarrinho();
+    }
+
+    function mostrarToast(mensagem) {
+        const toast = document.getElementById('toast');
+        if (!toast) return;
+        toast.innerText = mensagem;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    salvarCarrinho();
+
+        function filtrar(categoria) {
+            document.querySelectorAll('.filter-item').forEach(item => {
+                item.style.display = categoria === 'todos' || item.classList.contains(categoria) ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

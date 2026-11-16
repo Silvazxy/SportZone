@@ -1,0 +1,24 @@
+/* Importa a mesma base visual da Home para manter consistência */
+@import url('style.css'); 
+
+/* ================= FILTROS MODERNOS (PILLS) ================= */
+.cabecalho-produtos {
+    display: flex; flex-direction: column; align-items: center; margin-bottom: 50px;
+}
+.filtros-modernos {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;
+}
+.filter-pill {
+    background: transparent; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.2);
+    padding: 10px 25px; border-radius: 50px; font-family: 'Montserrat'; font-weight: 600;
+    font-size: 14px; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px;
+}
+.filter-pill:hover {
+    border-color: var(--accent); color: #fff; box-shadow: 0 0 15px rgba(0,255,136,0.2);
+}
+.filter-pill.active {
+    background: var(--accent); color: #000; border-color: var(--accent); box-shadow: 0 5px 15px rgba(0,255,136,0.4);
+}
+
+/* Transições suaves para os filtros via JS */
+.filter-item { transition: opacity 0.3s ease, transform 0.3s ease; }
